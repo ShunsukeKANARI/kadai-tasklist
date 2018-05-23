@@ -1,3 +1,6 @@
+<div class="row">
+      <div class="col-xs-12 col-lg-6 col-lg-offset-3 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+        
 <%= form_for(task) do |f| %>
  <% if task.errors.any? %>
     <div id="error_explanation">
@@ -8,9 +11,12 @@
       </ul>
     </div>
   <% end %>
-  <%= f.label :content, 'やること' %>
-  <%= f.text_field :content %>
-  <%= f.label :status, '状態' %>
-  <%= f.text_field :status %>
-  <%= f.submit '登録' %>
+  <%= f.label :content, 'やること', class: "form-group" %>
+  <%= f.text_field :content, class: "form-control", placeholder: "ここに予定を記入" %>
+  <%= f.label :status, '状態', class: "form-group" %>
+  <%= f.text_field :status, class: "form-control", placeholder: "もうやったかどうかを記入" %>
+  <%= f.submit '登録', class: "btn btn-primary" %>
 <% end %>
+
+  </div>
+</div>

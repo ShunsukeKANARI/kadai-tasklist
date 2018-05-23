@@ -1,11 +1,30 @@
 <h1>やること一覧</h1>
+<div class="row">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
 
-<ul>
-    <% @task.each do |task| %>
-        <li><%= link_to task.id, task %>：<%= task.content %>  &gt;  <%= task.status %></li>
-    <% end %>
-</ul>
+        <table class="table table-striped table-bordered table-condensed table-responsive">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>やること</th>
+                <th>状態</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% @task.each do |task| %>
+                    <tr>
+                        <td class="text-left"><%= link_to task.id, task %></td>
+                        <td class="text-left"><%= task.content %></td>
+                        <td class="text-left"><%= task.status %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+                        
+        <%= paginate @task %>
+        <div>
+            <%= link_to '新規やること追加', new_task_path, class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>
 
-<%= paginate @task %>
-
-<%= link_to '新規やること追加', new_task_path %>
