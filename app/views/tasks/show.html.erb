@@ -1,6 +1,7 @@
 <h1>やることid:<%= @task.id %>詳細</h1>
 
-<p><%= @task.content %></p>
+<p>タイトル：<%= @task.title %></p>
+<p>内容：<%= @task.content %></p>
 
 <%= link_to '一覧に戻る', tasks_path %>
 <%= link_to 'やることを編集する', edit_task_path(@task) %>
