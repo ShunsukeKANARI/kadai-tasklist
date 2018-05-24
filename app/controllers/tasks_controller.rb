@@ -19,7 +19,7 @@ class TasksController < ApplicationController
         flash[:success] = '追加完了'
         redirect_to @task
       else
-        flash.now[:danger] = '追加失敗（文字数が256文字以上だとダメです）'
+        flash.now[:danger] = '追加失敗（文字数が256文字以上だったり空欄だとダメです）'
         render :new
       end
     

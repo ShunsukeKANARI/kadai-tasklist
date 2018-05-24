@@ -11,11 +11,21 @@
       </ul>
     </div>
   <% end %>
-  <%= f.label :content, 'やること', class: "form-group" %>
-  <%= f.text_field :content, class: "form-control", placeholder: "ここに予定を記入" %>
-  <%= f.label :status, '状態', class: "form-group" %>
-  <%= f.text_field :status, class: "form-control", placeholder: "もうやったかどうかを記入" %>
-  <%= f.submit '登録', class: "btn btn-primary" %>
+  
+  <div class="form-group">
+    <%= f.label :content, 'やること', class: "control-label" %>
+    <%= f.text_field :content, class: "form-control", placeholder: "ここに予定を記入" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :status, '状態', class: "control-label" %>
+      <%= f.text_field :status, class: "form-control", placeholder: "もうやったかどうかを記入" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.submit '登録', class: "btn btn-primary" %>
+  </div>
+  
 <% end %>
 
   </div>
