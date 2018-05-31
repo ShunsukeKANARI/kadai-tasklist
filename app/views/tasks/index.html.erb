@@ -14,9 +14,9 @@
               </tr>
             </thead>
             <tbody>
-                <% @tasks.each do |task| %>
+                <% @tasks.each.with_index(1) do |task, index| %>
                     <tr>
-                        <td class="text-left"><%= link_to task.id, task %></td>
+                        <td class="text-left"><%= link_to index, task %></td>
                         <td class="text-left"><%= task.content %></td>
                         <td class="text-left"><%= task.status %></td>
                     </tr>
