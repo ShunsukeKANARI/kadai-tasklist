@@ -1,3 +1,6 @@
+<% if logged_in? %>
+  <p>ログイン完了ユーザ: <%= current_user.name %></p>
+
 <h1>やること一覧</h1>
 <div class="row">
     <div class="col-xs-12 col-lg-6 col-lg-offset-3 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
@@ -11,7 +14,7 @@
               </tr>
             </thead>
             <tbody>
-                <% @task.each do |task| %>
+                <% @tasks.each do |task| %>
                     <tr>
                         <td class="text-left"><%= link_to task.id, task %></td>
                         <td class="text-left"><%= task.content %></td>
@@ -21,10 +24,19 @@
             </tbody>
         </table>
                         
-        <%= paginate @task %>
+        <%= paginate @tasks %>
         <div>
             <%= link_to '新規やること追加', new_task_path, class: "btn btn-primary" %>
         </div>
     </div>
 </div>
 
+  
+<% else %>
+
+  <div class="center jumbotron">
+    <div class="text-center">
+      <h1>タスクリスト！</h1>
+    </div>
+  </div>
+<% end %>
