@@ -14,7 +14,7 @@
               </tr>
             </thead>
             <tbody>
-                <% @tasks.each.with_index(1) do |task, index| %>
+                <% @tasks.each.with_index(params[:page].present? ? (1 + 10 * (params[:page].to_i - 1)) : 1) do |task, index| %>
                     <tr>
                         <td class="text-left"><%= link_to index, task %></td>
                         <td class="text-left"><%= task.content %></td>
